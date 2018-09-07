@@ -56,28 +56,32 @@ function signUp(){
 }
 
 
-function login(){
-    let user={
+function login() {
+    var user = {
         id: null,
-        username: document.getElementById('usernameLog').value,
-        password:document.getElementById('passwordLog').value
+        username: document.getElementById("usernameLog").value,
+        password: document.getElementById("passwordLog").value
     }
+
+    
+
     var http = new XMLHttpRequest();
     http.open('GET', 'php/get_users.php', true);
     http.onreadystatechange = function() {
         if(http.readyState == 4 && http.status == 200) {
             var data = JSON.parse(http.responseText);
-            console.log(data);
             data.data.forEach(function(user_data) {
                 if(user_data.username == user.username && user_data.password == md5(user.password)){
                     localStorage.setItem('user_id', user_data.id);
                     user.id = user_data.id;
+                    console.log(user.id);
                 }
             });
+
             if(user.id != null) {
                 document.location.replace('home.html');
             } else {
-                error_div.innerHTML = 'Wrong username and password combination.';
+                alert('Wrong username and password combination.');
             }
         }
     }

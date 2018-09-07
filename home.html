@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body onload="checkLogin(), loadData()" id="home">
+    <header>
+        <div class="prvi"><h1>IT Bootcamp</h1></div>
+        <div id="nav">
+            <a href="home.html">&nbsp | Home</a>
+        </div>
+    </header>
+    <main>
+         <div id="signup-errors"></div>
+        <div id="signup-success"></div>
+        <aside>
+            <div id="user-image"></div>
+            <div id="username"></div>
+            <div class="change-profile-image">
+                <label for="profile-image" >Change Profile Image</label>
+                <input type="file" id="profile-image" / style="display: none;" onchange="changeProfileImage()">
+                
+            </div>
+        </aside>
+        <section>
+
+            <div class="new-feed">
+                    <div class="add-feed">
+                        <input type="text" id="status" placeholder="What is your mind?" />
+                        <button onclick="addStatus()">Share</button>
+                    </div>
+                    <div class="add-image">
+                        <label for="image">Add image</label>
+                        <input type="file" style="display: none" id="image" />
+                        <input type="checkbox" id="private"><label for="private">Private</label>
+                        <button onclick="addImage()">Add Image</button>
+                    </div>
+                </div>
+                <div id="feed-list"></div>
+        </section>
+    </main>
+    <script src="js/declare.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

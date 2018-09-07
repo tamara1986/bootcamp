@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body onload="checkLogin(), loadImageData()" id="imagesBody">
+    <header>
+        <div class="prvi"><h1>IT Bootcamp</h1></div>
+        <div id="nav">
+            <a href="home.html">&nbsp | Home</a>
+        </div>
+    </header>
+    <main>
+         
+        <div id="errors"></div>
+            <div id="success"></div>
+            <div class="left-sidebar" id="image-container">
+                <div id="image"></div>
+            </div>
+            <div class="main-content" id="image-comments-container">
+                <div class="image-meta">
+                    <div id="signup-errors"></div>
+                    <div id="signup-success"></div>
+                </div>
+                <div id="comments"></div>
+                <div class="add-comment">
+                    <input type="text" id="new-comment" placeholder="Insert comment" />
+                    <button onclick="addComment()">Add Comment</button>
+                </div>
+            </div>
+    </main>
+    <script src="js/declare.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/image.js"></script>
+</body>
+</html>
